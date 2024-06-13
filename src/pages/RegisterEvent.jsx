@@ -24,7 +24,7 @@ const RegisterEvent = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${import.meta.env.API_URL}/register/${eventId}`, formData, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/register/${eventId}`, formData, {
         headers: {
           'Content-Type': 'application/json',
         },

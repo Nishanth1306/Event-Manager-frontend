@@ -16,7 +16,6 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Home/>
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

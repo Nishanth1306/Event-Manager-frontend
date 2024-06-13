@@ -16,10 +16,11 @@ const Events = () => {
   });
   const navigate = useNavigate();
 
+  // ${import.meta.env.VITE_API_URL}/events
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.API_URL}/events`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/events`);
         setEvents(response.data);
       } catch (error) {
         console.error('Error fetching events:', error);
@@ -61,12 +62,12 @@ const Events = () => {
     console.log('Data to send:', dataToSend);
 
     try {
-      await axios.post(`${import.meta.env.API_URL}/events`, dataToSend, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/events`, dataToSend, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
-      const response = await axios.get(`${import.meta.env.API_URL}/events`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/events`);
       setEvents(response.data);
       setFormData({
         place: '',

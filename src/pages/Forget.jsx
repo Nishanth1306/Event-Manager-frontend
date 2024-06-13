@@ -16,7 +16,7 @@ export default function Forget() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${import.meta.env.API_URL}/request-reset`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/request-reset`, {
         email
       }, {
         headers: {

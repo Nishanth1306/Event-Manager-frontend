@@ -10,7 +10,7 @@ const Logout = () => {
   useEffect(() => {
     const logoutUser = async () => {
       try {
-        await axios.post(`${import.meta.env.API_URL}/logout`, {}, {
+        await axios.post(`${import.meta.env.VITE_API_URL}/logout`, {}, {
           withCredentials: true,
         });
         localStorage.removeItem('token');

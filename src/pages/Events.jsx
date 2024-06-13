@@ -10,7 +10,7 @@ const Events = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.API_URL}/events`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/events`);
         setEvents(response.data);
       } catch (error) {
         console.error('Error fetching events:', error);
@@ -22,7 +22,7 @@ const Events = () => {
 
   const fetchUpdatedEvents = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.API_URL}/events`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/events`);
       setEvents(response.data);
     } catch (error) {
       console.error('Error fetching updated events:', error);
@@ -40,7 +40,7 @@ const Events = () => {
 
   const handleDelete = async (eventId) => {
     try { 
-      await axios.delete(`${import.meta.env.API_URL}/${eventId}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/${eventId}`);
       await fetchUpdatedEvents(); 
       console.log("Event deleted");
     } catch(error){
