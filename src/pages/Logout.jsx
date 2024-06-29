@@ -27,7 +27,9 @@ const Logout = () => {
 
   return (
     <div>
-      <p>Logging out...</p>
+      <p>You have Logged Out Successfully.
+      </p>
+      <p>Thank You, Visit Again</p>
     </div>
   );
 };
