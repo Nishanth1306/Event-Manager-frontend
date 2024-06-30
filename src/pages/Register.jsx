@@ -38,7 +38,7 @@ export default function Register() {
                         placeholder='Enter your Name'
                         value={data.name}
                         onChange={(e) => setData({ ...data, name: e.target.value })}
-                        className='register-input'
+                        className='input-form'
                         required
                     />
                 </div>
@@ -49,7 +49,7 @@ export default function Register() {
                         placeholder='Enter your Email'
                         value={data.email}
                         onChange={(e) => setData({ ...data, email: e.target.value })}
-                        className='register-input'
+                        className='input-form'
                         required
                     />
                 </div>
@@ -60,7 +60,7 @@ export default function Register() {
                         placeholder='Enter your Password'
                         value={data.password}
                         onChange={(e) => setData({ ...data, password: e.target.value })}
-                        className='register-input'
+                        className='input-form'
                         required
                     />
                 </div>

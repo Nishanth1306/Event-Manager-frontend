@@ -41,9 +41,9 @@ const RegisterEvent = () => {
     <div className="register-container">
       <h2>Register for Event</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
-        <input type="tel" name="mobile" placeholder="Mobile Number" onChange={handleChange} required />
-        <input type="number" name="seats" placeholder="Number of Seats" onChange={handleChange} min="1" required />
+        <input className='input-form' type="text" name="name" placeholder="Name" onChange={handleChange} required />
+        <input className='input-form' type="tel" name="mobile" placeholder="Mobile Number" onChange={handleChange} required />
+        <input className='input-form' type="number" name="seats" placeholder="Number of Seats" onChange={handleChange} min="1" required />
         <button type="submit">Register</button>
       </form>
     </div>

@@ -88,7 +88,7 @@ const Events = () => {
     <div className="events-container">
       <h2>Events</h2>
       <form onSubmit={handleSubmit}>
-        <input
+        <input className='input-form'
           type="text"
           name="place"
           placeholder="Place"
@@ -96,7 +96,7 @@ const Events = () => {
           onChange={handleChange}
           required
         />
-        <input
+        <input className='input-form'
           type="text"
           name="eventname"
           placeholder="EventName"
@@ -104,7 +104,7 @@ const Events = () => {
           onChange={handleChange}
           required
         />
-        <input
+        <input className='input-form'
           type="number"
           name="participationNumber"
           placeholder="Participation Number"
@@ -112,7 +112,7 @@ const Events = () => {
           onChange={handleChange}
           required
         />
-        <input
+        <input className='input-form'
           type="text"
           name="duration"
           placeholder="Duration"
@@ -120,7 +120,7 @@ const Events = () => {
           onChange={handleChange}
           required
         />
-        <input
+        <input className='input-form'
           type="text"
           name="startTime"
           placeholder="Start Time"
@@ -128,7 +128,7 @@ const Events = () => {
           onChange={handleChange}
           required
         />
-        <input
+        <input className='input-form'
           type="text"
           name="endTime"
           placeholder="End Time"
@@ -136,7 +136,7 @@ const Events = () => {
           onChange={handleChange}
           required
         />
-        <input
+        <input className='input-form'
           type="text"
           name="address"
           placeholder="Address"
@@ -144,7 +144,7 @@ const Events = () => {
           onChange={handleChange}
           required
         />
-        <input type="file" name="image" onChange={handleChange} />
+        <input className='input-form' type="file" name="image" onChange={handleChange} />
         <button type="submit">Add Event</button>
       </form>
     </div>

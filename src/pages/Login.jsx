@@ -46,12 +46,11 @@ export default function Login() {
             <h2 className='login-title'>Login</h2>
             <form onSubmit={loginUser} className='login-form'>
                 <label className='login-label'>Email</label>
-                <input 
+                <input className='input-form'
                     type='text' 
                     placeholder='Enter your Email' 
                     value={data.email} 
                     onChange={(e) => setData({ ...data, email: e.target.value })}
-                    className='login-input'
                 />
                 <label className='login-label'>Password</label>
                 <input 
@@ -59,7 +58,7 @@ export default function Login() {
                     placeholder='Enter your Password' 
                     value={data.password} 
                     onChange={(e) => setData({ ...data, password: e.target.value })}
-                    className='login-input'
+                    className='input-form'
                 />
                 <button type='submit' className='login-button'>Login</button>
                 <Link to='/forget' className='login-link'>Forget Password</Link>

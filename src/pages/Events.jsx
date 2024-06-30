@@ -40,7 +40,7 @@ const Events = () => {
 
   const handleDelete = async (eventId) => {
     try { 
-      await axios.delete(`${import.meta.env.VITE_API_URL}/${eventId}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/events/${eventId}`);
       await fetchUpdatedEvents(); 
       console.log("Event deleted");
     } catch(error){
@@ -53,12 +53,12 @@ const Events = () => {
       {events.map((event) => (
         <div key={event._id} className="event-card">
           <h3>{event.place}</h3>
-          <p>Event Name: {event.name}</p>
+          <p>Event Name: {event.eventname}</p>
           <p>Participation Number: {event.participationNumber}</p>
           <p>Duration: {event.duration}</p>
           <p>Address: {event.address}</p>
           <p>StartTime: {event.startTime}</p>
-          <p>End TIme: {event.endTime} </p>
+          <p>End Time: {event.endTime} </p>
           {event.image && <img src={event.image} alt={event.place} />}
           <button onClick={() => handleRegister(event._id)} className='regis-btn'>Register Now</button>
           <button onClick={() => handleDelete(event._id)} className='delete-btn'>Delete</button>
