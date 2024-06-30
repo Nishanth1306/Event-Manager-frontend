@@ -29,10 +29,10 @@ const Events = () => {
     }
   };
 
-  const handleRegister = async (eventId) => {
+  const handleRegister = async (eventId, eventName) => { // Correctly pass eventName here
     try {
-      await navigate(`/register/${eventId}`);
-      await fetchUpdatedEvents(); 
+      await navigate(`/register/${eventId}/${eventName}`); // Ensure you pass both eventId and eventName
+      await fetchUpdatedEvents();
     } catch (error) {
       console.error('Error registering for event:', error);
     }
@@ -60,7 +60,7 @@ const Events = () => {
           <p>StartTime: {event.startTime}</p>
           <p>End Time: {event.endTime} </p>
           {event.image && <img src={event.image} alt={event.place} />}
-          <button onClick={() => handleRegister(event._id)} className='regis-btn'>Register Now</button>
+          <button onClick={() => handleRegister(event._id, event.eventname)} className='regis-btn'>Register Now</button>
           <button onClick={() => handleDelete(event._id)} className='delete-btn'>Delete</button>
           <p>Remaining Seats Available: {event.participationNumber - event.seatsTaken}</p>
         </div>

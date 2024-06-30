@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const RegisterEvent = () => {
-  const { eventId } = useParams();
+  const { eventId, eventName } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
@@ -24,13 +24,14 @@ const RegisterEvent = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/register/${eventId}`, formData, {
+      const response = await axios.post('http://localhost:3000/confirmEvent', formData, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
+      const { otp } = response.data;
       toast.success('Your seat has been successfully registered!');
-      navigate('/events');
+      navigate('/confirmationEvent', { state: { otp, eventname: eventName } });
     } catch (error) {
       console.error('Error registering for event:', error);
       toast.error(`Error registering for the event: ${error.response?.data?.message || error.message}`);

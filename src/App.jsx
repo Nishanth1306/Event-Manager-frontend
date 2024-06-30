@@ -10,6 +10,7 @@ import Events from './pages/Events';
 import ProtectedRoute from './components/ProtectedRoute';
 import RegisterEvent from './pages/RegisterEvent';
 import Home from './pages/Home';
+import ConfirmationEvent from './pages/ConfirmationEvent';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/add-event" element={<ProtectedRoute element={<AddEvent />} />} />
         <Route path="/events" element={<ProtectedRoute element={<Events />} />} />
-        <Route path="/register/:eventId" element={<RegisterEvent />} />
+        <Route path="/register/:eventId/:eventName" element={<RegisterEvent />} />
+        <Route path="/confirmationEvent" element={<ConfirmationEvent />} />
       </Routes>
     </Router>
   );
